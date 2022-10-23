@@ -12,7 +12,7 @@ allprojects {
 
 ```
 dependencies {
-	        implementation 'com.github.Thawtarlamin:Highlights-Scrape:1.0'
+	        implementation 'com.github.Thawtarlamin:Highlights-Scrape:1.0.1'
 	}
 
 ```
