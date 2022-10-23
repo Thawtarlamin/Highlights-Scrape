@@ -34,7 +34,7 @@ public class Highlight {
                     @Override
                     public void onResponse(String response) {
                         Document doc = Jsoup.parse(response);
-                        Elements es = doc.select("div[id=aft-inner-row]");
+                        Elements es = doc.select("div[id=aft-inner-row]").select("div[class=spotlight-post]");
                         for(Element e:es){
                             String image = e.select("div[class=data-bg-hover data-bg-categorised read-bg-img] img").attr("src");
                             String href = e.select("div[class=data-bg-hover data-bg-categorised read-bg-img] a").attr("href");
