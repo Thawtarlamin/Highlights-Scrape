@@ -35,7 +35,7 @@ public class Stream {
                     @Override
                     public void onResponse(String response) {
                         Document doc = Jsoup.parse(response);
-                        Elements es = doc.select("div[class=entry-content-wrap]");
+                        Elements es = doc.select("div[class=entry-content read-details]");
                         for (Element e:es){
                             String link = e.select("source[type=application/x-mpegURL]").attr("src");
                             StreamModal modal = new StreamModal(link);
