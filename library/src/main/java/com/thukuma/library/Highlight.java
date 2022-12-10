@@ -34,16 +34,16 @@ public class Highlight {
                     @Override
                     public void onResponse(String response) {
                         Document doc = Jsoup.parse(response);
-                        Elements es = doc.select("div[class=read-single color-pad]");
+                        Elements es = doc.select("div[class=archive-grid-post]");
                         for(Element e:es){
-                            String image = e.select("img[class=attachment-thumbnail size-thumbnail wp-post-image]").attr("src");
+                            String image = e.select("img[class=attachment-medium size-medium wp-post-image]").attr("src");
                             String href = e.select("a[class=aft-post-image-link]").attr("href");
-//                            String league = e.select("li[class=meta-category] a").text();
+                            String league = e.select("a[class=chromenews-categories category-color-1]").text();
                             String title = e.select("a[class=aft-post-image-link]").text();
                             String date = e.select("span[class=item-metadata posts-date]").text();
 //                            Log.d("my-test", "onResponse: "+league);
                             HighlightModal modal = new HighlightModal(
-                                    title,image,"2Sport TV",date,href
+                                    title,image,league,date,href
                             );
                             complete.onComplete(modal);
                         }
